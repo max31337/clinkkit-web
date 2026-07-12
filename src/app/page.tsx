@@ -25,7 +25,7 @@ const settings = [
   ["hg.cleanup_unknown_exe", "Opt into deeper cleanup checks when needed."],
 ];
 
-function Mark({ name }: { name: "shield" | "spark" | "broom" }) {
+function Mark({ name }: { name: "shield" | "spark" | "broom" | "lock" }) {
   if (name === "shield") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -40,6 +40,15 @@ function Mark({ name }: { name: "shield" | "spark" | "broom" }) {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z" />
         <path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" />
+      </svg>
+    );
+  }
+
+  if (name === "lock") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="5" y="11" width="14" height="9" rx="2" />
+        <path d="M8 11V7a4 4 0 0 1 8 0v4" />
       </svg>
     );
   }
@@ -101,7 +110,7 @@ export default function Home() {
             </div>
             <div className="hero-meta">
               <span>Available now <b>HistoryGuard</b></span>
-              <span>Planned next <b>Aliases + utilities</b></span>
+              <span>Planned next <b>Secrets protection, aliases + utilities</b></span>
             </div>
           </div>
 
@@ -206,8 +215,9 @@ export default function Home() {
           <div className="roadmap-heading"><div><p className="eyebrow dark-eyebrow"><span /> BUILT TO GROW</p><h2>One toolkit.<br /><em>More</em> to come.</h2></div><p>HistoryGuard is the first ClinkKit module. The roadmap expands the CMD experience without pretending future features are already here.</p></div>
           <div className="roadmap-cards">
             <article className="roadmap-card available"><span className="roadmap-state">AVAILABLE NOW</span><h3>HistoryGuard</h3><ul><li>History filtering</li><li>Typo suggestions</li><li>Cleanup and backups</li></ul><span className="roadmap-symbol">01</span></article>
-            <article className="roadmap-card"><span className="roadmap-state">PLANNED</span><h3>Aliases</h3><ul><li>User-defined aliases</li><li>Import and export</li><li>Alias management</li></ul><span className="roadmap-symbol">02</span></article>
-            <article className="roadmap-card"><span className="roadmap-state">PLANNED</span><h3>Utilities</h3><ul><li>Safe trash command</li><li><code>mkcd</code></li><li>File and directory helpers</li></ul><span className="roadmap-symbol">03</span></article>
+            <article className="roadmap-card"><span className="roadmap-state">PLANNED</span><h3>Secrets Protection</h3><ul><li>Detect passwords, keys &amp; tokens</li><li>Exclude sensitive commands</li><li>Scrub existing history</li></ul><span className="roadmap-symbol">02</span></article>
+            <article className="roadmap-card"><span className="roadmap-state">PLANNED</span><h3>Aliases</h3><ul><li>User-defined aliases</li><li>Import and export</li><li>Alias management</li></ul><span className="roadmap-symbol">03</span></article>
+            <article className="roadmap-card"><span className="roadmap-state">PLANNED</span><h3>Utilities</h3><ul><li>Safe trash command</li><li><code>mkcd</code></li><li>File and directory helpers</li></ul><span className="roadmap-symbol">04</span></article>
           </div>
         </div>
       </section>
